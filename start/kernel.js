@@ -36,7 +36,8 @@ const globalMiddleware = [
 |
 */
 const namedMiddleware = {
-  auth: 'Adonis/Middleware/Auth'
+  auth: 'Adonis/Middleware/Auth',
+  guest: 'App/Middleware/RedirectIfAuthenticated',
 }
 
 /*
@@ -44,7 +45,7 @@ const namedMiddleware = {
 | Server Middleware
 |--------------------------------------------------------------------------
 |
-| Server level middleware are executed even when route for a given URL is
+| Server levl middleware are executed even when route for a given URL is
 | not registered. Features like `static assets` and `cors` needs better
 | control over request lifecycle.
 |

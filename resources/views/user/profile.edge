@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Profile</title>
+</head>
+<body>
+  <section>
+    <h1>User profile: {{ username }}</h1>
+    <ul>
+      @each(item in collection)
+        <li>{{ item.text }}</li>
+      @endeach
+    </ul>
+  </section>
+</body>
+</html>

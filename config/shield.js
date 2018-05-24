@@ -1,5 +1,7 @@
 'use strict'
 
+const Env = use('Env')
+
 module.exports = {
   /*
   |--------------------------------------------------------------------------
@@ -72,7 +74,7 @@ module.exports = {
   | X-XSS-Protection
   |--------------------------------------------------------------------------
   |
-  | X-XSS Protection saves applications from XSS attacks. It is adopted
+  | X-XSS Protection saves from applications from XSS attacks. It is adopted
   | by IE and later followed by some other browsers.
   |
   | Learn more at https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
@@ -132,7 +134,7 @@ module.exports = {
   |
   */
   csrf: {
-    enable: true,
+    enable: Env.get('ENABLE_CSRF_CHECK', true) === 'true',
     methods: ['POST', 'PUT', 'DELETE'],
     filterUris: [],
     cookieOptions: {
